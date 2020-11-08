@@ -1,0 +1,28 @@
+﻿@using CaseCoreApp.Models
+@model List<User>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Kullanıcı Adı</th>
+        <th>Adı</th>
+        <th>Soyadı</th>
+        <th>Mail</th>      
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.userid</td>
+            <td>@x.username</td>
+            <td>@x.firstname</td>
+            <td>@x.lastname</td>
+            <td>@x.mail</td>
+        </tr>
+    }
+</table>
+

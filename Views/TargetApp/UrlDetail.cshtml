@@ -1,0 +1,31 @@
+﻿@model CaseCoreApp.Models.TargetApp
+@{
+    ViewData["Title"] = "UrlDetail";
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+
+    <div style="padding-left:30px;padding-right:30px;">
+        <br />
+        <h2>Url Güncelle</h2>
+        <br />
+
+        @using (Html.BeginForm("EditUrl", "TargetApp", FormMethod.Post))
+        {
+            <div hidden>
+                @Html.TextBoxFor(x => x.id, new { @class = "form-control" })
+            </div>
+            @*<b>ID</b>
+            @Html.TextBoxFor(x => x.id, new { @class = "form-control" })
+            <br />*@
+            <b>Açıklama</b>
+            @Html.TextBoxFor(x => x.name, new { @class = "form-control" })
+            <br />
+            <b>URL</b>
+            @Html.TextBoxFor(x => x.url, new { @class = "form-control" })
+            <br />
+            <b>Interval</b>
+            @Html.TextBoxFor(x => x.interval, new { @class = "form-control" })
+            <br />
+            <button class="btn btn-info" style="width:100px;">Güncelle</button>
+        }
+    </div>

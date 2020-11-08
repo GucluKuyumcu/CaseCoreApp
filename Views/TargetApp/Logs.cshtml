@@ -1,0 +1,29 @@
+﻿@using CaseCoreApp.Models
+@model List<Log>
+@{
+    ViewData["Title"] = "Logs";
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+
+<br />
+<h2>Loglar</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Kullanıcı Adı</th>
+        <th>Url</th>
+        <th>Tarih</th>
+        <th>Statü</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.username</td>
+            <td>@x.url</td>
+            <td>@x.date</td>
+            <td>@x.status</td>
+        </tr>
+    }
+
+</table>
+
